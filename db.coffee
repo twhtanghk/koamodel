@@ -1,6 +1,6 @@
 _ = require 'lodash'
 util = require 'util'
-db = require('monk')(process.env.DB)
+db = require('monk')(process.env.DB, console.error)
 
 logger = (context) -> (next) -> (args, method) ->
   console.log method, args
