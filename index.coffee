@@ -30,7 +30,7 @@ class Model
 
   findOne: (ctx, next) ->
     try
-      ctx.response.body = await @model.findOne ctx.params.id
+      ctx.response.body = await @model.findOne ctx.params
       await next()
     catch err
       ctx.throw 500, err.toString()
